@@ -35,8 +35,8 @@ const disableScroll = () => {
   document.body.style.cssText = `
     position: fixed;
     top: ${-window.scrollY}px;
-    left:0;
-    width:100%;
+    left: 0;
+    width: 100%;
     height: 100vh;
     overflow: hidden;
     padding-right: ${widthScroll}px;
