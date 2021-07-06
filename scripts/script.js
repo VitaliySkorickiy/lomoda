@@ -17,30 +17,12 @@ headerCityButton.addEventListener('click', () => {
   localStorage.setItem('lomoda-location', city)
 })
 
+
 //  мод окно  ============
 
 
 const subheaderCart = document.querySelector('.subheader__cart');
 const cartOverlay = document.querySelector('.cart-overlay');
-
-const cartModalOpen = () => {
-  cartOverlay.classList.add('cart-overlay-open');
-  disableScroll();
-}
-
-const cartModalClose = () => {
-  cartOverlay.classList.remove('cart-overlay-open');
-  enableScroll();
-}
-
-subheaderCart.addEventListener('click', cartModalOpen);
-
-cartOverlay.addEventListener('click', (e) => {
-  const target = e.target;
-
-  target.classList.contains("cart__btn-close") ? cartModalClose() : null
-  target.matches(".cart-overlay-open") ? cartModalClose() : null
-});
 
 //  блокировка скролла ===================
 
@@ -67,5 +49,27 @@ const enableScroll = () => {
     top: document.body.dbScrollY,
   })
 };
+
+// =====================================
+
+const cartModalOpen = () => {
+  cartOverlay.classList.add('cart-overlay-open');
+  disableScroll();
+}
+
+const cartModalClose = () => {
+  cartOverlay.classList.remove('cart-overlay-open');
+  enableScroll();
+}
+
+subheaderCart.addEventListener('click', cartModalOpen);
+
+cartOverlay.addEventListener('click', (e) => {
+  const target = e.target;
+
+  target.classList.contains("cart__btn-close") ? cartModalClose() : null
+  target.matches(".cart-overlay-open") ? cartModalClose() : null
+});
+
 
 // ===========================================================
